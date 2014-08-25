@@ -15,12 +15,12 @@ public class GameState extends BasicGameState
 	{
 		world = new World();
 		world.generateMap();
-		//keyInput = new KeyInput();
+		keyInput = new KeyInput();
 	}
 
 	public void update()
 	{
-		//keyInput.update();
+		keyInput.update();
 	}
 	
 	public void render()

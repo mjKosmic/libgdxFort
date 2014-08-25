@@ -90,7 +90,7 @@ public class TileMap
 			{
 				Texture image = tiles[i][j].getTexture();
 				batch.begin();
-				batch.draw(image, (float) i * TILESIZE, (float) j* TILESIZE);
+				batch.draw(image, (float) i * TILESIZE + Window.X, (float) j* TILESIZE + Window.Y);
 				batch.end();
 			}
 		}

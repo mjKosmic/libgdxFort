@@ -24,7 +24,7 @@ public class World
 	
 	public void generateMap()
 	{
-		tilemap.setTiles(worldGen.generateMap(2));
+		tilemap.setTiles(worldGen.generateMap(3));
 	}
 
 	

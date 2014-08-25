@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
+import com.blacklion11.fort.input.*;
 import com.blacklion11.fort.states.*;
 
 public class Core extends ApplicationAdapter{
@@ -36,9 +37,8 @@ public class Core extends ApplicationAdapter{
 		cam = new OrthographicCamera(WIDTH, HEIGHT);
 		cam.translate(WIDTH / 2, HEIGHT / 2);
 		cam.update();
-	
-		batch = new SpriteBatch();
-		img = new Texture("res/water.png");
+		
+		//Gdx.input.setInputProcessor(new KeyInput());
 	}
 
 	@Override
