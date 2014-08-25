@@ -10,6 +10,9 @@ public class Core extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
 	
+	public Core()
+	{}
+	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
