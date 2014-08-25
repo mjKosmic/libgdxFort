@@ -1,4 +1,4 @@
-package fort;
+package com.blacklion11.fort;
 
 
 public class Window

@@ -1,0 +1,1 @@
+java -cp libs/gdx.jar;libs/gdx-natives.jar;libs/gdx-backend-lwjgl.jar;libs/gdx-backend-lwjgl-natives.jar;bin com/blacklion11/fort/Main

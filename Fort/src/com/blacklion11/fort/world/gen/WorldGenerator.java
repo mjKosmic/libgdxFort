@@ -1,7 +1,7 @@
-package fort.world.gen;
+package com.blacklion11.fort.world.gen;
 
 import java.util.Random;
-import fort.world.World;
+import com.blacklion11.fort.world.World;
 
 
 public class WorldGenerator
@@ -48,7 +48,7 @@ public class WorldGenerator
 		
 		
 		// Debug Array Contents
-		/*
+		
 		System.out.println("-------------------------------------------------------------");
 		for(int i = 0; i < map.length; i++)
 		{
@@ -60,7 +60,7 @@ public class WorldGenerator
 			System.out.println();
 		}
 		System.out.println("-------------------------------------------------------------");
-		*/
+		
 		
 		return map;
 	}

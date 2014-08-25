@@ -1,10 +1,9 @@
-package fort.world;
+package com.blacklion11.fort.world;
 
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Color;
-import org.newdawn.slick.Image;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import fort.Window;
+import com.blacklion11.fort.Window;
 
 import java.util.Random;
 import java.util.ArrayList;
@@ -20,11 +19,13 @@ public class TileMap
 	Tile[][] tiles;
 	
 	Tileset tileset;
+	SpriteBatch batch;
 	
 	public TileMap(int tilesize)
 	{
 		this.TILESIZE = tilesize;
 		tileset = new Tileset();
+		batch = new SpriteBatch();
 	}
 	
 	public void setTiles(int[][] map)
@@ -37,11 +38,11 @@ public class TileMap
 			{	
 				if(map[i][j] <= 35)
 				{
-					tiles[i][j] = new Tile(tileset.getTileImages().get(Tile.WATER), Tile.WATER);
+					tiles[i][j] = new Tile(tileset.getTileTextures().get(Tile.WATER), Tile.WATER);
 				}
 				if(map[i][j] > 35 && map[i][j] <= 200)
 				{
-					tiles[i][j] = new Tile(tileset.getTileImages().get(Tile.DIRT), Tile.DIRT);
+					tiles[i][j] = new Tile(tileset.getTileTextures().get(Tile.DIRT), Tile.DIRT);
 				}
 				/*if(map[i][j] > 35 && map[i][j] <= 60)
 				{
@@ -60,22 +61,37 @@ public class TileMap
 		}
 	}
 	
-	public void render(Graphics g)
+	public void render()
 	{
-		
+		/*
 		for(int i = (int)Window.X / TILESIZE; i < (Window.X + Window.WIDTH) / TILESIZE; i++)
 		{
 			for(int j = (int)Window.Y / TILESIZE; j < (Window.Y + Window.HEIGHT) / TILESIZE; j++)
 			{
-				Image image = tileset.getTileImages().get(Tile.BLANK);
+				Texture image = tileset.getTileTextures().get(Tile.BLANK);
 				if(i > 0 && i + Window.HEIGHT / TILESIZE< tiles.length)
 				{
 					if(j > 0 && j + Window.WIDTH / TILESIZE < tiles[0].length)
 					{
-						image = tiles[i][j].getImage();
+						image = tiles[i][j].getTexture();
 					}
 				}
-				g.drawImage(image, (float)i * TILESIZE - Window.X, (float)j * TILESIZE - Window.Y);
+				batch.begin();
+				batch.draw(image, (float) i * TILESIZE, (float) j * TILESIZE);
+				batch.end();
+				//g.drawImage(image, (float)i * TILESIZE - Window.X, (float)j * TILESIZE - Window.Y);
+			}
+		}
+		*/
+		
+		for(int i = 0; i < tiles.length; i++)
+		{
+			for(int j = 0; j < tiles[0].length; j++)
+			{
+				Texture image = tiles[i][j].getTexture();
+				batch.begin();
+				batch.draw(image, (float) i * TILESIZE, (float) j* TILESIZE);
+				batch.end();
 			}
 		}
 		

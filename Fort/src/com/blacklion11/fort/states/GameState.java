@@ -1,14 +1,9 @@
-package fort.states;
+package com.blacklion11.fort.states;
 
-import org.newdawn.slick.SlickException;
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.state.StateBasedGame;
-import org.newdawn.slick.state.BasicGameState;
-import org.newdawn.slick.Graphics;
 
-import fort.world.*;
-import fort.input.*;
-import fort.Window;
+import com.blacklion11.fort.world.*;
+import com.blacklion11.fort.input.*;
+import com.blacklion11.fort.Window;
 
 public class GameState extends BasicGameState
 {
@@ -16,21 +11,22 @@ public class GameState extends BasicGameState
 	World world;
 	KeyInput keyInput;
 	
-	public void init(GameContainer gc, StateBasedGame game) throws SlickException
+	public void init()
 	{
 		world = new World();
 		world.generateMap();
-		keyInput = new KeyInput(Window.HEIGHT);
+		//keyInput = new KeyInput();
 	}
 
-	public void update(GameContainer gc, StateBasedGame game, int delta) throws SlickException
+	public void update()
 	{
-		keyInput.update(gc,game,delta);
+		//keyInput.update();
 	}
 	
-	public void render(GameContainer gc, StateBasedGame game, Graphics g) throws SlickException
+	public void render()
 	{
-		world.render(g);
+		
+		world.render();
 	}
 	
 	public int getID(){return States.GAME;}

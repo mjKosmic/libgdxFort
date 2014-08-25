@@ -1,16 +1,15 @@
-package fort.world;
+package com.blacklion11.fort.world;
 
 
 import java.util.ArrayList;
 
-import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
+import com.badlogic.gdx.graphics.Texture;
 
 public class Tileset
 {
 	
 	
-	ArrayList<Image> images;
+	ArrayList<Texture> images;
 	
 	
 	
@@ -26,21 +25,16 @@ public class Tileset
 	
 	private void loadTileImages()
 	{
-		images = new ArrayList<Image>();
-		try
-		{	
-			images.add(Tile.BLANK, new Image("res/black.png"));
-			images.add(Tile.DIRT, new Image("res/dirt.png"));
-			images.add(Tile.GRASS, new Image("res/grass.png"));
-			images.add(Tile.WATER, new Image("res/water.png"));
-		}catch(SlickException e)
-		{
-			System.out.println("Error loading tile images");
-			e.printStackTrace();
-		}
+		images = new ArrayList<Texture>();
+			
+		images.add(Tile.BLANK, new Texture("res/black.png"));
+		images.add(Tile.DIRT, new Texture("res/dirt.png"));
+		images.add(Tile.GRASS, new Texture("res/grass.png"));
+		images.add(Tile.WATER, new Texture("res/water.png"));
+		
 	}
 
 	
-	public ArrayList<Image> getTileImages(){return this.images;}
+	public ArrayList<Texture> getTileTextures(){return this.images;}
 	
 }

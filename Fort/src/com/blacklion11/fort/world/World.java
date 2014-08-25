@@ -1,7 +1,7 @@
-package fort.world;
+package com.blacklion11.fort.world;
 
-import org.newdawn.slick.Graphics;
-import fort.world.gen.WorldGenerator;
+
+import com.blacklion11.fort.world.gen.WorldGenerator;
 
 public class World
 {
@@ -24,13 +24,13 @@ public class World
 	
 	public void generateMap()
 	{
-		tilemap.setTiles(worldGen.generateMap(3));
+		tilemap.setTiles(worldGen.generateMap(2));
 	}
 
 	
-	public void render(Graphics g)
+	public void render()
 	{
-		tilemap.render(g);
+		tilemap.render();
 	}
 
 

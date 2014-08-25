@@ -1,4 +1,4 @@
-package fort.states;
+package com.blacklion11.fort.states;
 
 
 public class States

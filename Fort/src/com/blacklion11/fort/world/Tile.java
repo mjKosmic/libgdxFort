@@ -1,10 +1,9 @@
-package fort.world;
+package com.blacklion11.fort.world;
 
 import java.util.ArrayList;
 
-import org.newdawn.slick.Color;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 
 
 public class Tile
@@ -23,7 +22,7 @@ public class Tile
 	public static int ID;
 	
 	///////// IMAGE STUFFS//////////////////////////////////////////////////////////////////
-	private Image image;
+	private Texture image;
 	
 	
 	/////// COLOR STUFFS /////////////////////////////////////////////////////////////////
@@ -43,7 +42,7 @@ public class Tile
 		setColors();
 	}
 	
-	public Tile(Image image, int id)
+	public Tile(Texture image, int id)
 	{
 		this.image = image;
 		this.ID = id;
@@ -60,25 +59,24 @@ public class Tile
 	
 	private void setColors()
 	{
-		BLACK = Color.black;
-		WHITE = Color.white;
-		BLUE = Color.blue;
-		GREEN = Color.green;
-		GRAY = Color.gray;
-		BROWN = new Color(87,59,12);
-		YELLOW = Color.yellow;
+		BLACK = Color.BLACK;
+		WHITE = Color.WHITE;
+		BLUE = Color.BLUE;
+		GREEN = Color.GREEN;
+		GRAY = Color.DARK_GRAY;
+		BROWN = new Color(87f,59f,12f,0f);
+		YELLOW = Color.YELLOW;
 	}
 	
 	
 	public void setID(int id){this.ID = id;}
 	public void setColor(Color c){this.color = c;}
-	public void setImage(Image image){this.image = image;}
+	public void setTexture(Texture image){this.image = image;}
 	
-	public Image getImage(){return this.image;}
+	public Texture getTexture(){return this.image;}
 
-	public void render(Graphics g, float x, float y)
+	public void render()
 	{	
-		g.setColor(color);
-		g.fillRect(x , y, TileMap.TILESIZE, TileMap.TILESIZE);
+		
 	}
 }

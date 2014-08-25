@@ -1,27 +1,17 @@
-package fort.input;
+package com.blacklion11.fort.input;
 
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.state.StateBasedGame;
-import org.newdawn.slick.Input;
-import fort.Window;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.InputAdapter;
 
-public class KeyInput
+import com.blacklion11.fort.Window;
+
+public class KeyInput extends InputAdapter
 {
-
-	Input input;
 	
 	public KeyInput(int height)
-	{
-		input = new Input(height);
-	}
+	{}
 	
-	public void update(GameContainer gc, StateBasedGame game, int delta)
-	{
-		if(input.isKeyDown(Input.KEY_LEFT))Window.X -= 20;
-		if(input.isKeyDown(Input.KEY_RIGHT))Window.X += 20;
-		if(input.isKeyDown(Input.KEY_UP))Window.Y -= 20;
-		if(input.isKeyDown(Input.KEY_DOWN))Window.Y+= 20;
-		
-	}
+	
 
 }
