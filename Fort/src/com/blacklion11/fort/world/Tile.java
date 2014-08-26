@@ -36,6 +36,8 @@ public class Tile
 	
 	public Color color; 
 	
+	public boolean mouseTouched;
+	
 	
 	public Tile()
 	{

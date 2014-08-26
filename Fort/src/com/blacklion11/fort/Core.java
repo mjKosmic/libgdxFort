@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.FPSLogger;
 
 import com.blacklion11.fort.input.*;
 import com.blacklion11.fort.states.*;
@@ -15,12 +16,12 @@ public class Core extends ApplicationAdapter{
 	public static int WIDTH;
 	public static int HEIGHT;
 	
+	private FPSLogger fpsLogger;
+	
 	public static OrthographicCamera cam;
 	
 	public GameStateManager gsm;
 	
-	SpriteBatch batch;
-	Texture img;
 	
 	public Core()
 	{}
@@ -30,6 +31,8 @@ public class Core extends ApplicationAdapter{
 		WIDTH = Gdx.graphics.getWidth();
 		HEIGHT = Gdx.graphics.getHeight();
 		
+		fpsLogger = new FPSLogger();
+		
 		gsm = new GameStateManager();
 		gsm.addState(new GameState(), States.GAME);
 		gsm.setState(States.GAME);
@@ -38,11 +41,12 @@ public class Core extends ApplicationAdapter{
 		cam.translate(WIDTH / 2, HEIGHT / 2);
 		cam.update();
 		
-		//Gdx.input.setInputProcessor(new KeyInput());
 	}
 
 	@Override
 	public void render () {
+	///////////FPS Logger
+		fpsLogger.log();
 	
 	////////// update
 		gsm.update();

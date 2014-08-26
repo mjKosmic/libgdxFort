@@ -10,17 +10,20 @@ public class GameState extends BasicGameState
 	
 	World world;
 	KeyInput keyInput;
+	MouseInput mouseInput;
 	
 	public void init()
 	{
 		world = new World();
 		world.generateMap();
-		keyInput = new KeyInput();
+		keyInput = new KeyInput(world);
+		mouseInput = new MouseInput(world);
 	}
 
 	public void update()
 	{
 		keyInput.update();
+		mouseInput.update();
 	}
 	
 	public void render()

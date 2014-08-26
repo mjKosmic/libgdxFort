@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import com.blacklion11.fort.Window;
+import com.blacklion11.fort.Core;
 
 import java.util.Random;
 import java.util.ArrayList;
@@ -16,9 +17,9 @@ public class TileMap
 {
 	public static int TILESIZE;
 
-	Tile[][] tiles;
+	public Tile[][] tiles;
 	
-	Tileset tileset;
+	public Tileset tileset;
 	SpriteBatch batch;
 	
 	public TileMap(int tilesize)
@@ -83,17 +84,16 @@ public class TileMap
 			}
 		}
 		*/
-		
+		batch.begin();
 		for(int i = 0; i < tiles.length; i++)
 		{
 			for(int j = 0; j < tiles[0].length; j++)
 			{
 				Texture image = tiles[i][j].getTexture();
-				batch.begin();
-				batch.draw(image, (float) i * TILESIZE + Window.X, (float) j* TILESIZE + Window.Y);
-				batch.end();
+				batch.draw(image, (float) i * TILESIZE + Window.X, Core.HEIGHT - (float) j* TILESIZE + Window.Y);
 			}
 		}
+		batch.end();
 		
 	}
 

@@ -8,7 +8,7 @@ public class World
 
 	public static int WATERLEVEL = 35;
 	
-	TileMap tilemap;
+	public TileMap tilemap;
 	WorldGenerator worldGen;
 	
 	public World()
