@@ -23,11 +23,11 @@ public class MouseInput
 		int x = Gdx.input.getX();
 		int y = Gdx.input.getY();
 		
-		if(x + Window.X > 0 && x + Window.X < world.tilemap.tiles[0].length * TileMap.TILESIZE)
+		if((x - Window.X) / TileMap.TILESIZE > 0 && x - Window.X < world.tilemap.tiles[0].length * TileMap.TILESIZE)
 		{
-			if(y + Window.Y > 0 && y + Window.Y < world.tilemap.tiles.length * TileMap.TILESIZE)
+			if((y + Window.Y) / TileMap.TILESIZE > 0 && y + Window.Y < world.tilemap.tiles.length * TileMap.TILESIZE)
 			{
-				world.tilemap.tiles[(int)((x + Window.X) / TileMap.TILESIZE)][((int)(y + Window.Y) / TileMap.TILESIZE) + 1] = new Tile(world.tilemap.tileset.getTileTextures().get(Tile.GRASS), Tile.GRASS);
+				world.tilemap.tiles[(int)((x - Window.X) / TileMap.TILESIZE)][((int)(y + Window.Y) / TileMap.TILESIZE)] = new Tile(world.tilemap.tileset.getTileTextures().get(Tile.GRASS), Tile.GRASS);
 			}
 		}
 		
