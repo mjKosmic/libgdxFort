@@ -1,10 +1,12 @@
-import java.awt.Point;
+package com.blacklion11.fort.entity;
 
+import java.awt.Point;
 
 
 public abstract class Entity
 {
 	
+
 	protected float x, y;
 	
 	public float getX(){return x;}
@@ -18,5 +20,4 @@ public abstract class Entity
 		this.x = p.x;
 		this.y = p.y;
 	}
-	
 }
