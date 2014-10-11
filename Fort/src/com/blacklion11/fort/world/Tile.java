@@ -77,8 +77,4 @@ public class Tile
 	
 	public Texture getTexture(){return this.image;}
 
-	public void render()
-	{	
-		
-	}
 }

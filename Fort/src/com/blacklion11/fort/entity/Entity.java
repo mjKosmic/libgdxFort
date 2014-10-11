@@ -6,10 +6,14 @@ import java.awt.Color;
 public abstract class Entity
 {
 	
-
+	//position of the entity
 	protected float x, y;
 	
+	// COLOR
 	protected Color color;
+	
+	//Texture of the entity
+	protected Texture texture;
 	
 	
 	public float getX(){return x;}

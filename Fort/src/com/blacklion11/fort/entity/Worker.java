@@ -5,12 +5,12 @@ public class Worker extends LivingEntity
 {
 
 
-	public Worker(float x, float y)
+	public Worker(float x, float y, java.awt.Color color)
 	{
 		
 		this.x = x; 
 		this.y = y;
-	
+		this.color = color;
 	}
 	
 	
